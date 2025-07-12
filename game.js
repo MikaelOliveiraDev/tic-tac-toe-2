@@ -5,12 +5,23 @@ let turn = "x";
 let gameover = false
 
 function start() {
-  canvas.width = 500;
-  canvas.height = 500;
+  adjustCanvasSize()
 
   board = new Board(10);
 
   loop();
+}
+
+function adjustCanvasSize() {
+  const gameContainer = document.querySelector("#game")
+  const size = Math.min(500, gameContainer.offsetWidth)
+
+  canvas.width = size
+  canvas.height = size
+
+  if (board) {
+    board.width = size
+  }
 }
 
 class Board {

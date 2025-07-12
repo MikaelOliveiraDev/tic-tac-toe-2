@@ -5,6 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tic Tac Toe 2</title>
 	<style>
+		@media (max-width: 480px) {
+			.turn-message {
+				padding: 4vw 7vw;
+			}
+		}
+
 		#game {
 			position: relative;
 			display: flex;
@@ -14,7 +20,7 @@
 			margin: 0 auto;
 		}
 		.turn-message {
-			padding: 30px 50px;
+			padding: 25px 50px;
 			border-radius: 10px;
 			text-transform: uppercase;
 			text-align: center;
@@ -22,8 +28,9 @@
 			font-size: 1.5em;
 			position: absolute;
 			left: 50%;
-			top: 100%;
+			top: calc(100% + 15px);
 			transform: translate(-50%, 0);
+			white-space: nowrap;
 		}
 		.turn-message.x {
 			background-color: rgb(245, 32, 32);
@@ -57,9 +64,11 @@
 		@keyframes disappear {
 			0% {
 				transform: translate(-50%, 0) scale(1);
+				opacity: 1;
 			}
 			100% {
-				transform: translate(-50%, 0) scale(.5) ;
+				transform: translate(-50%, 0) scale(.5);
+				opacity: 0;
 			}
 		}
 	</style>
