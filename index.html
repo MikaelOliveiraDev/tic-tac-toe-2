@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tic Tac Toe 2</title>
+	<style>
+		#game {
+			position: relative;
+			display: flex;
+		}
+		canvas {
+			background-color: rgb(247, 243, 239);
+			margin: 0 auto;
+		}
+		.turn-message {
+			padding: 30px 50px;
+			border-radius: 10px;
+			text-transform: uppercase;
+			text-align: center;
+			font-weight: bolder;
+			font-size: 1.5em;
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			transform: translate(-50%, 0);
+		}
+		.turn-message.x {
+			background-color: rgb(245, 32, 32);
+		}
+		.turn-message.o {
+			background-color: rgb(55, 55, 236);
+		}
+
+		.appear {
+			z-index: 2;
+			animation: appear 1s forwards;
+		}
+		.disappear {
+			z-index: 1;
+			animation: disappear 1s forwards;
+		}
+
+		@keyframes appear {
+			0% {
+				opacity: 0;
+				transform: translate(-50%, 100%) scale(1);
+			}
+			30% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 1;
+				transform: translate(-50%, 0) scale(1);
+			}
+		}
+		@keyframes disappear {
+			0% {
+				transform: translate(-50%, 0) scale(1);
+			}
+			100% {
+				transform: translate(-50%, 0) scale(.5) ;
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1>TicTacToe 2</h1>
+	<div id="game">
+		<canvas></canvas>
+
+		<div class="turn-message x appear">Vez de X</div>
+		<div class="turn-message o disappear">Vez de O</div>
+	</div>
+	
+
+
+	<script src="game.js"></script>
+</body>
+</html>
