@@ -152,10 +152,13 @@ class Field {
       ) {
         if (!cell.content) {
           cell.content = turn;
-          let won = this.checkWin();
-          if (won) board.checkWin();
+          
+          if (this.checkWin()) board.checkWin();
+
           focus(row, col);
+
           turn = turn == "x" ? "o" : "x";
+          switchMessage()
         }
 
         return null;
@@ -297,6 +300,10 @@ function click(ev) {
   x -= rect.x
   y -= rect.y
 
+  board.clickOnPoint(x, y);
+}
+
+function switchMessage() {
   let messageX = document.querySelector(".turn-message.x")
   let messageY = document.querySelector(".turn-message.o")
 
@@ -307,8 +314,6 @@ function click(ev) {
     messageX.classList.replace("disappear", "appear")
     messageY.classList.replace("appear", "disappear")
   }
-
-  board.clickOnPoint(x, y);
 }
 
 function drawGrid(x, y, size) {
