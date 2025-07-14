@@ -4,6 +4,11 @@ let board;
 let turn = "x";
 let gameover = false
 
+const colors = {
+  red: "#8a280f",
+  blue: "#0a2f76"
+}
+
 function start() {
   adjustCanvasSize()
 
@@ -178,7 +183,7 @@ class Field {
   }
 
   drawShadow() {
-    ctx.globalAlpha = 0.1;
+    ctx.globalAlpha = 0.2;
     ctx.fillStyle = "black";
     let x = this.x - board.margin / 2;
     let y = this.y - board.margin / 2;
@@ -198,7 +203,7 @@ class Field {
       let x2 = this.x + Field.width - mar;
       let y2 = this.y + Field.width - mar;
 
-      ctx.strokeStyle = "red";
+      ctx.strokeStyle = colors.red;
       ctx.moveTo(x1, y1);
       ctx.lineTo(x2, y2);
       ctx.moveTo(x1, y2);
@@ -208,7 +213,7 @@ class Field {
       let y = this.y + Field.width / 2;
       let radius = Field.width / 2 - mar;
 
-      ctx.strokeStyle = "blue";
+      ctx.strokeStyle = colors.blue;
       ctx.arc(x, y, radius, 0, (360 * Math.PI) / 180);
     }
     ctx.stroke();
@@ -268,7 +273,7 @@ class Cell {
     let x2 = this.x + Cell.width - margin;
     let y2 = this.y + Cell.width - margin;
 
-    ctx.strokeStyle = "red";
+    ctx.strokeStyle = colors.red;
     ctx.lineWidth = 7;
     ctx.beginPath();
 
@@ -286,7 +291,7 @@ class Cell {
     let cx = this.x + Cell.width / 2;
     let cy = this.y + Cell.width / 2;
 
-    ctx.strokeStyle = "blue";
+    ctx.strokeStyle = colors.blue;
     ctx.lineWidth = 7;
     ctx.beginPath();
 

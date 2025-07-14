@@ -1,89 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Tic Tac Toe 2</title>
-	<style>
-		@media (max-width: 480px) {
-			.turn-message {
-				padding: 4vw 7vw;
-			}
-		}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
+    <title>Tic Tac Toe 2</title>
+    <style>
+      @media (max-width: 480px) {
+        .turn-message {
+          padding: 4vw 7vw;
+        }
+      }
 
-		#game {
-			position: relative;
-			display: flex;
-		}
-		canvas {
-			background-color: rgb(247, 243, 239);
-			margin: 0 auto;
-		}
-		.turn-message {
-			padding: 25px 50px;
-			border-radius: 10px;
-			text-transform: uppercase;
-			text-align: center;
-			font-weight: bolder;
-			font-size: 1.5em;
-			position: absolute;
-			left: 50%;
-			top: calc(100% + 15px);
-			transform: translate(-50%, 0);
-			white-space: nowrap;
-		}
-		.turn-message.x {
-			background-color: rgb(245, 32, 32);
-		}
-		.turn-message.o {
-			background-color: rgb(55, 55, 236);
-		}
+	  h1 {
+		font-family: "Rampart One", sans-serif;
+		font-weight: 400;
+		font-style: italic;
+		font-size: 3em;
+		text-align: center;
+	  }
+      #game {
+        position: relative;
+        display: flex;
+      }
+      canvas {
+        background-color: rgb(247, 243, 239);
+        margin: 0 auto;
+		border-radius: 5px;
+      }
+      .turn-message {
+        padding: 25px 50px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        text-align: center;
+		font-family: "Mogra", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: bolder;
+        font-size: 1.5em;
+		color: white;
+        position: absolute;
+        left: 50%;
+        top: calc(100% + 15px);
+        transform: translate(-50%, 0);
+        white-space: nowrap;
+      }
+      .turn-message.x {
+        background-color: #8a280f;
+      }
+      .turn-message.o {
+        background-color: #0a2f76;
+      }
 
-		.appear {
-			z-index: 2;
-			animation: appear 1s forwards;
-		}
-		.disappear {
-			z-index: 1;
-			animation: disappear 1s forwards;
-		}
+      .appear {
+        z-index: 2;
+        animation: appear 1s forwards;
+      }
+      .disappear {
+        z-index: 1;
+        animation: disappear 1s forwards;
+      }
 
-		@keyframes appear {
-			0% {
-				opacity: 0;
-				transform: translate(-50%, 100%) scale(1);
-			}
-			30% {
-				opacity: 1;
-			}
-			100% {
-				opacity: 1;
-				transform: translate(-50%, 0) scale(1);
-			}
-		}
-		@keyframes disappear {
-			0% {
-				transform: translate(-50%, 0) scale(1);
-				opacity: 1;
-			}
-			100% {
-				transform: translate(-50%, 0) scale(.5);
-				opacity: 0;
-			}
-		}
-	</style>
-</head>
-<body>
-	<h1>TicTacToe 2</h1>
-	<div id="game">
-		<canvas></canvas>
+      @keyframes appear {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, 100%) scale(1);
+        }
+        30% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+          transform: translate(-50%, 0) scale(1);
+        }
+      }
+      @keyframes disappear {
+        0% {
+          transform: translate(-50%, 0) scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(-50%, 0) scale(0.5);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>TicTacToe 2</h1>
+    <div id="game">
+      <canvas></canvas>
 
-		<div class="turn-message x appear">Vez de X</div>
-		<div class="turn-message o disappear">Vez de O</div>
-	</div>
-	
+      <div class="turn-message x appear">Vez de X</div>
+      <div class="turn-message o disappear">Vez de O</div>
+    </div>
 
-
-	<script src="game.js"></script>
-</body>
+    <script src="game.js"></script>
+  </body>
 </html>
