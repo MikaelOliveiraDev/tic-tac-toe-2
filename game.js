@@ -19,8 +19,9 @@ function start() {
 
 function adjustCanvasSize() {
   const gameContainer = document.querySelector("#game")
-  const size = Math.min(500, gameContainer.offsetWidth)
+  const size = Math.min(500, document.body.offsetWidth)
 
+  gameContainer.style.width = size + "px"
   canvas.width = size
   canvas.height = size
 
@@ -114,6 +115,15 @@ class Board {
       this.fields[1][1].win === this.fields[2][0].win
     )
       return gameover = true
+  }
+
+  reset() {
+    this.forEachField((field) => {
+      field.win = null
+      field.forEachCell((cell) => {
+        cell.content = null
+      })
+    })
   }
 }
 
@@ -307,6 +317,18 @@ class Cell {
   }
 }
 
+function restart() {
+  if (turn === "o") {
+    switchMessage()
+    turn = "x"
+  } else {
+    turn = "o"
+  }
+  gameover = false
+  board.reset()
+  loop()
+}
+
 function click(ev) {
   let x = ev.clientX;
   let y = ev.clientY;
@@ -460,5 +482,6 @@ function loop() {
 }
 
 canvas.addEventListener("pointerdown", click);
+document.querySelector("#restart").addEventListener("click", restart)
 
 start();
