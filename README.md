@@ -17,9 +17,14 @@ O primeiro jogador pode marcar em qualquer lugar (qualquer célula de qualquer c
 
 Porém o próximo jogador poderá marcar apenas no campo que corresponde à célula marcaa pelo jogador anterior. Por exemplo, se o jogador 1 marcar uma célula localizada no <b>centro</b> de um <b>campo</b>, o jogador 2 deverá marcar qualquer célula do campo que fica no <b>centro</b> do <b>tabuleiro</b>.
 
+<img src="destination-example.png" style="width: min(600px, 100%);">
+
 Essa regra vale para todos os turnos do jogo. Exceto quando o jogador 2 seria obrigado a marcar em um campo já conquistado. Nesse caso, o jogador pode jogar em qualquer campo do tabuleiro que não esteja conquistado.
 
+<br>
 O jogador "conquista" um campo quando marca 3 células posicionadas horizontal, vertical ou diagonalmente dentro de um campo. Assim, o campo será marcado com o seu sinal ("x" ou "o").
+
+<img src="conquer-example.png" style="width: min(400px, 100%);">
 
 O objetivo do jogo é conquistar 3 campos posicionados horizontal, vertical ou diagonalmente, para ganhar no tabuleiro maior. E ao mesmo tempo tentar impedir o oponente de fazer o mesmo.
 
