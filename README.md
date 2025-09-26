@@ -41,7 +41,7 @@ Essa regra vale para todos os turnos do jogo. Exceto quando o jogador 2 seria ob
 
 O jogador "conquista" um campo quando marca 3 células posicionadas horizontal, vertical ou diagonalmente dentro de um campo. Assim, o campo será marcado com o seu sinal ("x" ou "o").
 
-<img src="assets/conquer-example.png" style="width: min(400px, 100%);">
+<img src="assets/conquer-example.png" style="width: min(350px, 100%);">
 
 ### Objetivo
 
